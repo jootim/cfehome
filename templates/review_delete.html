@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block title %}Delete Review{% endblock %}
+{% block content %}
+<form  method="post">
+    {% csrf_token %}
+    <p>Confirm to Delete?</p>
+    <button type="button" class="btn btn-primary mt-2" onclick="window.history.back()">Cancel</button>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

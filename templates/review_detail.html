@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Review List{% endblock %}
+{% block content %}
+<h1>Review Details</h1>
+
+<p>Review ID: {{ review.id }}</p> <br>
+<p>Review : {{ review.review }}</p> <br>
+<p>Review Rating: {{ review.rating }}</p>
+
+{% endblock %}

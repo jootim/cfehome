@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}Review List{% endblock %}
+{% block content %}
+<ul>
+    <li>
+        {%for review in reviews %} <br>
+        <h2>{{ review.user.first_name }} {{ review.user.last_name }}</h2>  <br>
+        ID:{{review.id}}<br>
+        Reviewer ID: {{ review.user.email }}<br>
+        Review: {{ review.review }}<br>
+        Rating: {{ review.rating }}<br>
+        <a href="{% url 'review-detail' pk=review.pk %}">Detail</a> <br>
+        <a href="{% url 'review-update' pk=review.pk %}">Edit</a> <br>
+        <a href="{% url 'review-delete' pk=review.pk %}">Delete</a> <br>
+        <hr>
+        {% endfor %}
+
+    </li>
+</ul>
+{% endblock %}

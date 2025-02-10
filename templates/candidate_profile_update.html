@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Company Home{% endblock %}
+{% block content %}
+
+    {% if user.is_authenticated %}
+    <!-- Show the form only if the user is authenticated -->
+    <h1>Update Profile</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input type="submit" value="Save">
+    </form>
+{% else %}
+    <p>Please log in to update your profile.</p>
+{% endif %}
+
+{% endblock %}

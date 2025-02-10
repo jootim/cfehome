@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Company Register{% endblock %}
+{% block content %}
+    <h1> Login Here </h1>
+    <!-- custom_login.html -->
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+
+{% endblock %}
